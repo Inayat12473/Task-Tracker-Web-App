@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Task Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div>
+        <h1>Task Tracker</h1>
+        <div class="meta">Responsive • LocalStorage persistence • Form validation</div>
+      </div>
+      <div class="meta">Tip: Press <strong>Enter</strong> in Title to add quickly</div>
+    </header>
+
+    <div class="grid">
+      <section class="card">
+        <h2>Create / Edit Task</h2>
+        <form id="taskForm" novalidate>
+          <div class="row">
+            <div style="flex:1">
+              <label>Title *</label>
+              <input id="title" required />
+              <div id="titleErr" class="error"></div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div style="flex:1">
+              <label>Due date</label>
+              <input type="date" id="due" />
+            </div>
+            <div style="width:120px">
+              <label>Priority</label>
+              <select id="priority">
+                <option value="low">Low</option>
+                <option value="medium" selected>Medium</option>
+                <option value="high">High</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label>Description</label>
+            <textarea id="desc"></textarea>
+          </div>
+
+          <div class="actions">
+            <button type="submit">Save Task</button>
+            <button type="button" id="resetBtn" class="secondary">Reset</button>
+            <div style="flex:1"></div>
+            <button type="button" id="clearAll" class="danger">Delete All</button>
+          </div>
+
+          <input type="hidden" id="editingId" />
+        </form>
+      </section>
+
+      <section>
+        <div class="card filters-card">
+          <div class="filters">
+            <div class="pill" id="count">0 tasks</div>
+            <select id="filterStatus">
+              <option value="all">All</option>
+              <option value="active">Active</option>
+              <option value="completed">Completed</option>
+            </select>
+            <select id="filterPriority">
+              <option value="all">All priorities</option>
+              <option value="high">High</option>
+              <option value="medium">Medium</option>
+              <option value="low">Low</option>
+            </select>
+            <select id="sortBy">
+              <option value="created_desc">Newest</option>
+              <option value="created_asc">Oldest</option>
+              <option value="due_asc">Due soon</option>
+              <option value="due_desc">Due later</option>
+            </select>
+            <input id="search" placeholder="Search tasks..." />
+          </div>
+        </div>
+
+        <div class="card">
+          <div id="taskList" class="list"></div>
+          <div id="empty" class="empty">No tasks yet — add one.</div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

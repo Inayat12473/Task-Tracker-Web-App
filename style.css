@@ -1,0 +1,52 @@
+/* Core styling */
+:root{
+  --bg:#0f1724;--card:#0b1220;--muted:#94a3b8;--accent:#60a5fa;--success:#34d399;--danger:#fb7185;
+  --glass:rgba(255,255,255,0.03);--radius:12px;
+  font-family:Inter, system-ui, sans-serif;
+}
+body{
+  margin:0;background:#061025;color:#e6eef8;padding:24px;
+  display:flex;justify-content:center;
+}
+.wrap{width:100%;max-width:1000px}
+header{display:flex;justify-content:space-between;margin-bottom:18px}
+h1{margin:0;font-size:20px}
+.meta{font-size:13px;color:var(--muted)}
+
+/* layout */
+.grid{display:grid;grid-template-columns:380px 1fr;gap:18px}
+.card{background:var(--card);padding:16px;border-radius:var(--radius)}
+
+/* form */
+label{font-size:13px;color:var(--muted)}
+input,textarea,select{
+  width:100%;padding:10px;border-radius:8px;border:none;
+  background:var(--glass);color:inherit;font-size:14px;
+}
+textarea{min-height:80px}
+.error{color:var(--danger);font-size:12px;display:none;margin-top:4px}
+.actions{display:flex;gap:8px;margin-top:10px}
+button{padding:10px 12px;border:none;border-radius:10px;font-weight:600;cursor:pointer}
+.secondary{background:transparent;border:1px solid var(--muted);color:var(--muted)}
+.danger{background:var(--danger);color:white}
+
+/* filters */
+.filters{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.pill{background:var(--glass);padding:8px 10px;border-radius:999px;font-size:13px;color:var(--muted)}
+
+/* tasks */
+.list{display:flex;flex-direction:column;gap:10px}
+.task{display:flex;gap:12px;padding:12px;border-radius:12px;background:var(--glass)}
+.task .left{width:6px;border-radius:6px}
+.task h3{margin:0;font-size:15px}
+.muted{color:var(--muted);font-size:13px}
+.controls{display:flex;gap:8px}
+.small{padding:6px 8px;font-size:12px;border-radius:8px}
+.completed h3{text-decoration:line-through;opacity:0.6}
+.empty{text-align:center;color:var(--muted);padding:20px;display:none}
+
+/* responsive */
+@media (max-width:880px){
+  .grid{grid-template-columns:1fr}
+  header{flex-direction:column;align-items:flex-start;gap:8px}
+}
