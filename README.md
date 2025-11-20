@@ -2,7 +2,7 @@
 A simple, fast task management web app built with HTML, CSS, and JavaScript.
 Everything runs in the browser and uses LocalStorage for persistence, so no backend required.
 
-Features
+#Features
 
 Add, edit, delete tasks
 
@@ -20,7 +20,7 @@ Clean and responsive UI
 
 No frameworks, no dependencies
 
-Tech Stack
+#Tech Stack
 
 HTML5
 
@@ -30,18 +30,18 @@ JavaScript (ES6)
 
 Browser LocalStorage
 
-Project Structure
+#Project Structure
 Task-Tracker-Web-App/
 │── index.html
 │── style.css
 │── script.js
 
-How to Run
+#How to Run
 
 Just open index.html in any modern browser.
 No server needed.
 
-How to Use
+#How to Use
 
 Enter task title
 
